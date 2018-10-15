@@ -96,7 +96,14 @@ namespace OpenRetail.App.Referensi
             txtDiskon.Text = this._produk.diskon.ToString();
             txtStok.Text = this._produk.stok.ToString();
             txtStokGudang.Text = this._produk.stok_gudang.ToString();
-            txtMinStokGudang.Text = this._produk.minimal_stok_gudang.ToString();            
+            txtMinStokGudang.Text = this._produk.minimal_stok_gudang.ToString();
+	    
+	    // Disable input saat edit produk
+	    if (this._isNewData == true)
+	    {
+	        txtStok.Enabled = false;
+		txtStokGudang.Enabled = false;
+	    }
         }
 
         private void LoadInputGrosir()
